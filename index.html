@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Datalist</title>
+
+		<style type="text/css">		
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				background: #2b2b2b; 
+				color: #cecece; 
+				text-align: 
+				center; 
+				font-family: sans-serif;
+			}
+
+			.container {
+				max-width: 1000px; 
+				min-height: calc(100vh - 20px);
+				margin: 0 auto; 
+				padding: 10px;
+				background-color: #666666;
+			}	
+
+			/* Datalist */	
+			.techs {
+				padding: 10px;
+				width: 70%;
+			}
+
+			.result {
+				margin-top: 10px;
+				color: white;
+			}
+
+			.clear {
+				padding: 10px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="container">
+			<h2 class="title">Datalist</h2>
+			<hr>
+
+			<input type="text" list="techs" class="techs" id="tech">
+			<button id="clear" class="clear">Clear</button>
+
+			<datalist id="techs">
+				<option value="HTML"></option>
+				<option value="CSS"></option>
+				<option value="JavaScript"></option>
+				<option value="PHP"></option>
+				<option value="MySQL"></option>			
+			</datalist>
+
+			
+			<div id="result" class="result"></div>
+		</div>
+
+		<script type="text/javascript">
+			const result = document.querySelector('#result');
+			const input = document.querySelector('#tech');
+			const clear = document.querySelector('#clear');
+
+			clear.onclick = () => {
+				input.value = '';
+				result.innerHTML = '';
+			}
+
+			input.onchange = function () {
+				if(input.value == '') {
+					result.innerHTML = '';
+				}
+
+				if(input.value == 'HTML') {
+					result.innerHTML = `<table border="1" width="100%">
+											<tr style="background: blue;">
+												<td>#</td><td>Country</td><td>Description</td>
+											</tr>
+											<tr style="background: yellow; color: black;">
+												<td>1</td><td>Ukraine</td><td>Slava Ukraine!</td>
+											</tr>
+										</table>`;
+				} 
+
+				if(input.value == 'CSS') {
+					result.innerHTML = `<i>CSS oninput</i>
+										<i>CSS oninput</i>
+										<i>CSS oninput</i>
+										<i>CSS oninput</i>
+										<i>CSS oninput</i>
+										<i>CSS oninput</i>`;
+				} 
+
+				if(input.value == 'JavaScript') {
+					result.innerHTML = `<i>JavaScript oninput</i>
+										<i>JavaScript oninput</i>
+										<i>JavaScript oninput</i>
+										<i>JavaScript oninput</i>
+										<i>JavaScript oninput</i>
+										<i>JavaScript oninput</i>`;
+				} 
+
+				if(input.value == 'PHP') {
+					result.innerHTML = `<i>PHP oninput</i>
+										<i>PHP oninput</i>
+										<i>PHP oninput</i>
+										<i>PHP oninput</i>
+										<i>PHP oninput</i>
+										<i>PHP oninput</i>`;
+				} 
+
+				if(input.value == 'MySQL') {
+					result.innerHTML = `<i>MySQL oninput</i>
+										<i>MySQL oninput</i>
+										<i>MySQL oninput</i>
+										<i>MySQL oninput</i>
+										<i>MySQL oninput</i>
+										<i>MySQL oninput</i>`;
+				} 
+			}
+
+		</script>
+
+	</body>
+</html>
